@@ -31,4 +31,6 @@ class PeopleIndex(get_index_base()):
         return Person
 
     def get_search_data(self, obj, language, request):
+        if language:
+            obj.set_current_language(language)
         return strip_tags(self.get_description(obj)).strip()
