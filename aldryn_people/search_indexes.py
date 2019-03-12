@@ -12,7 +12,7 @@ from .models import Person
 class PeopleIndex(get_index_base()):
     haystack_use_for_indexing = getattr(settings, "ALDRYN_PEOPLE_SEARCH", True)
 
-    INDEX_TITLE = True
+    index_title = True
 
     def get_title(self, obj):
         return obj.name
